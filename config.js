@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     qrsApi: {
-		hostname: 'https://localhost',
+		hostname: 'https://win2.qfp.qlik.com',
 		portNumber: '4242',
 		certificates: {
 			certFile: path.resolve(__dirname, 'certs', 'client.pem'),
@@ -15,9 +15,9 @@ module.exports = {
 		database: 'qlikinsightbot',
 		
 	},
-    getUserId: (userFull) => userFull.name,
+    getUserId: (userFull) => userFull.userId,
     getUserDirectory: (userFull) => userFull.userDirectory,
-    getUserName: (userFull) => userFull.name.split('@')[0].split('.').map((string) => string.charAt(0).toUpperCase() + string.slice(1)).join(' '),
-    getUserEmail: (userFull) => userFull.name,
-    userFilter: (userFull) => userFull.userDirectory === 'OKTA',
+    getUserName: (userFull) => userFull.userId.split('@')[0].split('.').map((string) => string.charAt(0).toUpperCase() + string.slice(1)).join(' '),
+    getUserEmail: (userFull) => userFull.userId,
+    userFilter: (userFull) => userFull.userDirectory === 'AUTH0',
 }
