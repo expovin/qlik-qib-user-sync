@@ -1,5 +1,7 @@
 # qlik-qib-user-sync
 
+Synchronizes QIB users from Qlik Sense using QRS API
+
 ## Usage
 
 ```js
